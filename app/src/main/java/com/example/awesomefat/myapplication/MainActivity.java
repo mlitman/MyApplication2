@@ -1,5 +1,6 @@
 package com.example.awesomefat.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,5 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         int answer = num1 + num2;
         this.myLabel.setText("" + answer);
+
+        Intent i = new Intent(this, AnswerScreen.class);
+        i.putExtra("theAnswer", answer);
+        this.startActivity(i);
     }
 }
