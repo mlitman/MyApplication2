@@ -16,16 +16,15 @@ public class AnswerScreen extends AppCompatActivity
         setContentView(R.layout.activity_answer_screen);
 
         TextView theAnswer = (TextView)this.findViewById(R.id.theAnswer);
-        int answer = this.getIntent().getIntExtra("theAnswer", -1);
-        theAnswer.setText("" + answer);
+        //int answer = this.getIntent().getIntExtra("theAnswer", -1);
+        //Test.getInstance().answerScreenCreateCountPlusPlus();
+        theAnswer.setText("" + Test2.answer);
 
     }
 
     public void onButtonClicked (View v)
     {
-        int answer = this.getIntent().getIntExtra("theAnswer", -1);
         Intent i = new Intent(this,Activity3.class);
-        i.putExtra("theAnswer", answer);
         this.startActivity(i);
 
     }

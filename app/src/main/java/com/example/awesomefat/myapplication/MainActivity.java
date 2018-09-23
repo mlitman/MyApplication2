@@ -27,14 +27,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonClicked(View v)
     {
-        int num1 = Integer.parseInt(this.num1ET.getText().toString());
-        int num2 = Integer.parseInt(this.num2ET.getText().toString());
+        int num1 = Test2.getIntFromString(this.num1ET.getText().toString());
+
+        int num2 = Test2.getIntFromString(this.num2ET.getText().toString());
+        //int num1 = Integer.parseInt(this.num1ET.getText().toString());
+
+        //int num2 = Integer.parseInt(this.num2ET.getText().toString());
 
         int answer = num1 + num2;
         this.myLabel.setText("" + answer);
 
         Intent i = new Intent(this, AnswerScreen.class);
-        i.putExtra("theAnswer", answer);
+        //Test.getInstance().setTheAnswer();
+        Test2.answer = answer;
         this.startActivity(i);
     }
 }
